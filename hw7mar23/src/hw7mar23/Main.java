@@ -6,14 +6,14 @@ import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
-		int l = 15;
+		int l = 50;
 		int[] array = new int[l];
 		
 		for (int i = 0; i<l; i++) {
 			array[i] = i;
 		}
 		
-		System.out.println(Arrays.toString(array));
+//		System.out.println(Arrays.toString(array));
 		
 		array[1] = 0;
 		int m = 2;
@@ -34,7 +34,7 @@ public class Main {
 			if (i != 0)
 				myList.add(i);
 		}
-		System.out.println(Arrays.toString(myList.toArray()));
 		
+		System.out.println(myList);
 	}
 }
