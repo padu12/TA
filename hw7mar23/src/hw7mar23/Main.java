@@ -3,10 +3,19 @@ package hw7mar23;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.time.LocalTime;
+import java.time.Duration;
 
 public class Main {
 	public static void main(String[] args) {
-		int l = 50;
+		printResult(1000);
+		printResult(10);
+		printResult(10000);
+	}
+	
+	public static void printResult (int n) {
+		LocalTime localTimeBefore = LocalTime.now();
+		int l = n;
 		int[] array = new int[l];
 		
 		for (int i = 0; i<l; i++) {
@@ -31,10 +40,12 @@ public class Main {
 		List<Integer> myList = new ArrayList<>();
 		
 		for (int i : array) {
-			if (i != 0)
+			if (i != 0) {				
 				myList.add(i);
+			}
 		}
-		
-		System.out.println(myList);
+		LocalTime localTimeAfter = LocalTime.now();
+		//System.out.println(myList);
+		System.out.println(Duration.between(localTimeBefore, localTimeAfter));
 	}
 }
