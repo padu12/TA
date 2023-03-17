@@ -8,18 +8,27 @@ import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
-		countingSort(100);
-		bubbleSort(100);
-		heapSort(100);
+//		countingSort(100);
+//		bubbleSort(100);
+//		heapSort(100);
+//		System.out.println();
+//		countingSort(1000);
+//		bubbleSort(1000);
+//		heapSort(1000);
+//		System.out.println();
+//		countingSort(10000);
+//		bubbleSort(10000);
+//		heapSort(10000);
+//		System.out.println();
+		
+		System.out.println("Counting sort:");
+		countingSort(10);
 		System.out.println();
-		countingSort(1000);
-		bubbleSort(1000);
-		heapSort(1000);
+		System.out.println("Bubble sort: ");
+		bubbleSort(10);
 		System.out.println();
-		countingSort(10000);
-		bubbleSort(10000);
-		heapSort(10000);
-		System.out.println();
+		System.out.println("Heap sort: ");
+		heapSort(10);
 	}
 	
 	public static void countingSort (int n) {
@@ -50,7 +59,7 @@ public class Main {
 			arrayCount[i] += arrayCount[i-1];
 		}
 		
-//		System.out.println(Arrays.toString(arrayCount));
+		System.out.println(Arrays.toString(array));
 		
 		for (int i : array) {
 			result[arrayCount[i]-1] = i;
@@ -58,9 +67,9 @@ public class Main {
 		}
 		
 		LocalTime localTimeAfter = LocalTime.now();
-		System.out.println(Duration.between(localTimeBefore, localTimeAfter));
+//		System.out.println("Counting sort: " + Duration.between(localTimeBefore, localTimeAfter));
 		
-//		System.out.println(Arrays.toString(result));
+		System.out.println(Arrays.toString(result));
 	}
 
 	private static int getMax(int[] array) {
@@ -92,6 +101,7 @@ public class Main {
 		for (int i = 0; i<arr.length; i++) {
 			arr[i] = rand.nextInt(n);
 		}
+		System.out.println(Arrays.toString(arr));
 		
         for (int i = 0; i < n - 1; i++)
             for (int j = 0; j < n - i - 1; j++)
@@ -102,8 +112,8 @@ public class Main {
                     arr[j + 1] = temp;
                 }
         LocalTime localTimeAfter = LocalTime.now();
-        System.out.println(Duration.between(localTimeBefore, localTimeAfter));
-//        System.out.println(Arrays.toString(arr));
+//        System.out.println("Bubble sort: " + Duration.between(localTimeBefore, localTimeAfter));
+        System.out.println(Arrays.toString(arr));
     }
 	
 	
@@ -116,6 +126,7 @@ public class Main {
 		for (int i = 0; i<arr.length; i++) {
 			arr[i] = rand.nextInt(N);
 		}
+		System.out.println(Arrays.toString(arr));
   
         // Build heap (rearrange array)
         for (int i = N / 2 - 1; i >= 0; i--)
@@ -131,10 +142,10 @@ public class Main {
             // call max heapify on the reduced heap
             heapify(arr, i, 0);
         }
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
 
         LocalTime localTimeAfter = LocalTime.now();
-        System.out.println(Duration.between(localTimeBefore, localTimeAfter));
+//        System.out.println("Heap sort: " + Duration.between(localTimeBefore, localTimeAfter));
     }
   
     // To heapify a subtree rooted with node i which is
